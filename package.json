@@ -1,0 +1,17 @@
+{
+  "name": "portfolio_site",
+  "version": "1.0.0",
+  "description": "My stupendous Nuxt.js project",
+  "author": "谷口未来",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
