@@ -1,0 +1,119 @@
+$font-ja:Helvetica, 游ゴシック, "Yu Gothic", YuGothic, HiraKakuProN-W3, メイリオ, Meiryo, sans-serif;
+$font-en:'Lato', sans-serif;
+$color-font: #3f3f3f;
+$color-sub:#e8ffd1;
+
+  // background: #a58181;
+
+$tab: 768px; // タブレット
+$pc: 1024px; // PC
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin main-title {
+  margin: 25px auto 90px auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 50px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -20px; /*線の上下位置*/
+    display: inline-block;
+    width: 60px; /*線の長さ*/
+    height: 6px; /*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); /*位置調整*/
+    background-color: $color-font; /*線の色*/
+    border-radius: 60px; /*線の丸み*/
+  }
+}
+@mixin text {
+  font-size: 15px;
+  padding-bottom: 20px;
+  line-height: 30px;
+  letter-spacing: 0.2em;
+  font-family: $font-ja;
+}
+
+@mixin input {
+  font-size: 16px;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border: solid 1px #ccc;
+  margin: 10px 0 30px 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  transition :0.5s;
+  width: 100%;
+  &:focus{
+    box-shadow:  1px 1px 3px 1px #d3d3d3;
+  }
+}
+
+@mixin skills{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &Items {
+    margin: 25px 30px 25px 0;
+    @include tab{
+      margin: 25px 40px 25px 0;
+    }
+    &-name {
+      font-weight: 700;
+      font-size: 15px;
+      @include tab{
+        font-size: 20px;
+      }
+    }
+    &-level {
+      font-weight: 700;
+      text-align: center;
+      color: #ffffff;
+      background: $color-font;
+      line-height: 25px;
+      border-radius: 7px;
+      position: relative;
+      &::after {
+        content: "";
+        left: 0;
+        position: absolute;
+        border: solid 1px $color-font;
+        height: 25px;
+        border-radius: 7px;
+        width: 125px;
+        @include tab{
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+body{
+  font-family: $font-en;
+}
+
+a {
+  text-decoration: none;
+  color: $color-font;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+  &:hover{
+  opacity: 0.8;
+  }
+}

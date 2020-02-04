@@ -1,72 +1,120 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        portfolio_site
-      </h1>
-      <h2 class="subtitle">
-        My stupendous Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="center">
+    <div class="main-visual">
+      <div class="main-visual-img main-visual__item1">
+        <div class="main-visual-img-img">
+          <img src="../assets/img/main-visual.png" width="340px" alt />
+        </div>
+        <div class="main-visual-img-line"></div>
+      </div>
+      <div class="main-visual__main main-visual__item2">
+        <p
+          class="main-visual__main__text"
+        >気になったことはやってみる好奇心旺盛な性格。旅行が好きで宮古島、野沢温泉、ニュージーランドに長期滞在しながら旅をする生活をしていた。もともと何かを作ることが好きであること、将来的に場所を選ばず働くことができるという理由からエンジニアへ転職。スキルアップのため日々奮闘中。</p>
+        <h1 class="main-visual__main__title">Miku Taniguchi</h1>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
 
-export default {
-  components: {
-    Logo
-  }
-}
-</script>
-
-<style>
-.container {
+<style lang="scss">
+.center {
   margin: 0 auto;
-  min-height: 100vh;
+}
+.main-visual {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
+  @include tab {
+    position: static;
+    flex-direction: row;
+    padding-top: 100px;
+    padding-left: 35px;
+  }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  &__item2 {
+    align-self: flex-end;
+  }
+  &-img {
+    & img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+      @include tab {
+        width: 350px;
+        height: 100%;
+        padding-left: 10px;
+      }
+      @include pc {
+        padding-left: 20px;
+      }
+    }
+    &-img::after {
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: " ";
+      @include tab {
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+    @include tab {
+      position: relative;
+    }
+    &-line {
+      @include tab {
+        border: solid 1px #707070;
+        padding-left: 10px;
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        top: 60px;
+        right: 65px;
+        z-index: -1;
+      }
+      @include pc {
+        top: 80px;
+        right: 80px;
+      }
+    }
+  }
+  &__main {
+    max-width: 580px;
+    padding-left: 2em;
+    &__text {
+      @include text;
+      color: #ffffff;
+      position: absolute;
+      bottom: 90px;
+      left: 3%;
+      z-index: 2;
+      width: 95%;
+      @include tab {
+        position: static;
+        color: black;
+        font-weight: 400;
+        width: 100%;
+      }
+    }
+    &__title {
+      position: absolute;
+      top: 30px;
+      left: 3%;
+      font-size: 80px;
+      color: #ffffff;
+      @include tab {
+        position: static;
+        color: #3f3f3f;
+      }
+    }
+  }
 }
 </style>

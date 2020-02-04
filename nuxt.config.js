@@ -12,6 +12,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
+      { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -38,7 +39,19 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-webfontloader',
+    '@nuxtjs/style-resources'
   ],
+  webfontloader: {
+    google: {
+      families: ['Lato:400,700'] //Loads Lato font with weights 400 and 700
+    }
+  },
+  styleResources: {
+    scss: [
+      '~/assets/scss/_index.scss'
+    ]
+  },
   /*
   ** Build configuration
   */
@@ -46,7 +59,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }
