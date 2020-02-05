@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import anime from "animejs";
 export default {
   data() {
     return {
@@ -40,6 +41,9 @@ export default {
         }
       ]
     };
+  },
+  components: {
+    anime // animeという名前でコンポーネント登録
   }
 };
 </script>
