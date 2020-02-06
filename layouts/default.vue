@@ -1,17 +1,21 @@
 <template>
   <div>
     <Header />
+
     <!-- header出力位置 -->
     <main>
       <nuxt />
     </main>
+    <BackToTop />
   </div>
 </template>
 <script>
 import Header from "@/components/header.vue"; // headerをインポート
+import BackToTop from "@/components/BackToTop.vue"; // BackToTopをインポート
 export default {
   components: {
-    Header
+    Header,
+    BackToTop
   }
 };
 </script>
