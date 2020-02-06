@@ -1,8 +1,6 @@
 <template>
   <div>
     <Header />
-
-    <!-- header出力位置 -->
     <main>
       <nuxt />
     </main>
@@ -10,8 +8,8 @@
   </div>
 </template>
 <script>
-import Header from "@/components/header.vue"; // headerをインポート
-import BackToTop from "@/components/BackToTop.vue"; // BackToTopをインポート
+import Header from "@/components/header.vue";
+import BackToTop from "@/components/BackToTop.vue";
 export default {
   components: {
     Header,

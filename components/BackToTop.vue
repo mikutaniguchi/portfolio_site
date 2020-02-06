@@ -15,7 +15,6 @@ export default {
     };
   },
   mounted() {
-    // スクロールを取得
     window.addEventListener("scroll", this.onScroll);
     window.addEventListener("load", () => {
       this.onScroll();
@@ -27,7 +26,6 @@ export default {
     }
   },
   methods: {
-    // スクロール値の取得
     onScroll() {
       this.scrollY = window.pageYOffset;
     }
@@ -40,9 +38,6 @@ export default {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  &hover {
-    opacity: 1;
-  }
 }
 .fa-angle-up {
   background: #ffffff;
