@@ -22,7 +22,7 @@ export default {
     return {
       menuItems: [
         {
-          name: "Top",
+          name: "Home",
           url: "/"
         },
         {
@@ -46,7 +46,6 @@ export default {
   }
 };
 </script>
-
 <style scoped lang="scss">
 a {
   text-decoration: none;
@@ -54,13 +53,20 @@ a {
 }
 .header {
   background: #ffffff;
-  font-size: 20px;
-  line-height: 65px;
+  font-size: 18px;
+  line-height: 55px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  @include tab {
+    line-height: 65px;
+    font-size: 20px;
+  }
 }
 .header-flex {
-  display: flex;
-  justify-content: space-between;
+  display: inline;
+  @include tab {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .inner {
   max-width: 1150px;
@@ -70,24 +76,69 @@ a {
   font-weight: 500;
   font-size: 30px;
   padding-left: 10px;
+  border-bottom: solid 1px #c2c2c2;
+  @include tab {
+    border-bottom: none;
+    font-size: 30px;
+  }
 }
 .navbar__menu {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
+  text-align: center;
   padding: 0;
   & li {
-    display: none;
+    width: 50%;
+    border-bottom: solid 1px #c2c2c2;
+    &:nth-child(1n) {
+      &:hover {
+        background: #e5e8e1;
+      }
+    }
+    &:nth-child(2n) {
+      border-right: solid 1px #c2c2c2;
+      &:hover {
+        background: #f7f1d7;
+      }
+    }
+    &:nth-child(3n) {
+      &:hover {
+        background: #e0e3e4;
+      }
+    }
+    &:nth-child(4n) {
+      &:hover {
+        background: #f7e1d7;
+      }
+    }
+    &:first-child {
+      display: none;
+    }
     @include tab {
-      display: inline-block;
       width: 110px;
       text-align: center;
+      border-bottom: none;
+      &:nth-child(2n) {
+        border-right: none;
+      }
+      &:first-child {
+        display: inline-block;
+      }
     }
     &:hover {
-      background: $color-sub;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
     }
+  }
+}
+li a {
+  width: 100%;
+  display: inline-block;
+  &:hover {
+    opacity: 1;
   }
 }
 </style>
