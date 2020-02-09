@@ -103,7 +103,7 @@ body{
   font-family: $font-en;
 }
 
-a {
+a, button {
   text-decoration: none;
   color: $color-font;
   -webkit-transition: all 0.3s ease;
