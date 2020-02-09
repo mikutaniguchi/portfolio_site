@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     isShow() {
-      return this.scrollY > 100 ? true : false;
+      return this.scrollY > 200 ? true : false;
     }
   },
   methods: {
@@ -38,15 +38,16 @@ export default {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 20;
 }
 .fa-angle-up {
   background: #ffffff;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
-  line-height: 60px;
+  line-height: 50px;
   border-radius: 50px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
   @include tab {
     display: none;

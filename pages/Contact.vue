@@ -3,22 +3,24 @@
     <h2 class="contact-title">Contact</h2>
     <div class="contact-main">
       <div class="contact-main__form">
-        <form action="#" method="post">
+        <form>
           <div>
-            <label for="name">お名前</label>
+            <label>お名前</label>
             <br />
-            <input type="text" name="mail" class="contact-main__form__name" />
-          </div>
-
-          <div>
-            <label for="name">メールアドレス</label>
-            <br />
-            <input type="text" name="mail" />
+            <input v-model="form.name.contents" type="text" />
           </div>
           <div>
-            <label for="name">お問い合わせ内容</label>
+            <label>メールアドレス</label>
             <br />
-            <textarea type="text" name="mail" />
+            <input v-model="form.email.contents" type="text" />
+          </div>
+          <div>
+            <label>お問い合わせ内容</label>
+            <br />
+            <textarea v-model="form.message.contents" type="textarea" />
+          </div>
+          <div>
+            <button class="contact-main__form-button" type="button" @click="sendMail()">送信</button>
           </div>
         </form>
       </div>
@@ -42,6 +44,35 @@
     </div>
   </div>
 </template>
+
+
+<script>
+import firebase from "~/plugins/firebase.js";
+// import { functions } from '@/plugins/firebase'
+
+export default {
+  data: () => ({
+    form: {
+      name: { contents: "" },
+      email: { contents: "" },
+      message: { contents: "" }
+    }
+  }),
+  methods: {
+    sendMail() {
+      const form = this.form;
+      const sendMail = firebase.functions().httpsCallable("sendMail");
+      sendMail({ form })
+        .then(response => {
+          alert(response);
+        })
+        .catch(error => {
+          alert(error);
+        });
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .contact-title {
@@ -73,6 +104,27 @@
     &__item {
       padding: 10px 20px;
       font-size: 30px;
+      &:hover {
+        animation: big 0.4s;
+        animation-fill-mode: forwards;
+      }
+      &:active {
+        animation: small 0.4s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  @keyframes big {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  @keyframes small {
+    100% {
+      transform: scale(1);
     }
   }
   .contact-main__form {
@@ -89,5 +141,20 @@ input {
 textarea {
   @include input;
   height: 200px;
+}
+.contact-main__form-button {
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border: solid 1px $color-font;
+  background-color: #ffffff;
+  line-height: 40px;
+  margin-bottom: 30px;
+  &:hover {
+    background-color: $color-font;
+    color: #ffffff;
+    opacity: 1;
+  }
 }
 </style>

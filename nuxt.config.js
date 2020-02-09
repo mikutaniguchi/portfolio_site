@@ -32,6 +32,8 @@ export default {
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false },
     { src: "~/plugins/vue-scrollto", ssr: false },
+    { src: "~/plugins/firebase.js" },
+    { src: '@/plugins/vee-validate' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -43,7 +45,8 @@ export default {
   */
   modules: [
     'nuxt-webfontloader',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv'
   ],
   webfontloader: {
     google: {
@@ -55,6 +58,15 @@ export default {
       '~/assets/scss/_index.scss'
     ]
   },
+  //envファイルの内容
+  env: {
+    FB_API_KEY: process.env.FB_API_KEY,
+    FB_AUTH_DOMAIN: process.env.FB_AUTH_DOMAIN,
+    FB_DATABASE_URL: process.env.FB_DATABASE_URL,
+    FB_PROJECTID: process.env.FB_PROJECTID,
+    FB_STORAGE_BUCKET: process.env.FB_STORAGE_BUCKET,
+    FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID
+  },
   /*
   ** Build configuration
   */
@@ -62,10 +74,14 @@ export default {
     vendor: [
       'vue-awesome-swiper'
     ],
+    transpile: [
+      "vee-validate/dist/rules"
+    ],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
     }
   }
+
 }
