@@ -144,17 +144,8 @@ textarea {
 }
 .contact-main__form-button {
   width: 100%;
-  cursor: pointer;
   font-size: 16px;
-  border: none;
   border: solid 1px $color-font;
-  background-color: #ffffff;
-  line-height: 40px;
-  margin-bottom: 30px;
-  &:hover {
-    background-color: $color-font;
-    color: #ffffff;
-    opacity: 1;
-  }
+  @include btn;
 }
 </style>
