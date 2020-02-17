@@ -99,6 +99,143 @@ $pc: 1024px; // PC
     }
   }
 }
+
+@mixin modalMask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+@mixin modalContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  overflow-y: scroll;
+  padding: 60px 10px 0 10px;
+  background-color: none;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  @include tab {
+    position: relative;
+    padding: 20px 25px;
+    width: 670px;
+    height: auto;
+    right: auto;
+    background: #ffffff;
+  }
+}
+@mixin modalDefaultButton{
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  font-size: 35px;
+  background: #c3c3c3;
+  width: 100%;
+  line-height: 50px;
+  opacity: 0.6;
+  @include tab {
+    background: #ffffff;
+    width: 50px;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+  @mixin closeButton{
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  position: static;
+  border-radius: 0;
+  font-family: $font-ja;
+  font-size: 15px;
+  width: 30%;
+  opacity: 1;
+  display: block;
+  @include tab {
+    display: none;
+  }
+}
+
+@mixin modalText {
+  font-family: $font-ja;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  color: #ffffff;
+  @include tab {
+    padding: 0;
+    color: black;
+  }
+  &__item {
+    & ul li {
+      padding-bottom: 1em;
+    }
+    &-btn {
+      @include btn;
+      border: solid 1px #ffffff;
+      color: #ffffff;
+      background: none;
+      font-size: 15px;
+      width: 100%;
+      margin-top: 20px;
+      @include tab {
+        @include btn($color: #ffffff, $color2: $color-font);
+        border: solid 1px $color-font;
+      }
+    }
+  }
+}
+
+@mixin modalTextItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include tab {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &-child:nth-child(odd) {
+    width: 55%;
+    @include tab {
+      width: 100%;
+    }
+  }
+  &-child:nth-child(even) {
+    width: 45%;
+    @include tab {
+      width: 100%;
+    }
+  }
+}
+
+@mixin btn($color:$color-font,$color2:#ffffff) {
+  background-color: $color2;
+  color: $color;
+  line-height: 40px;
+  margin-bottom: 30px;
+  &:hover {
+    background-color: $color;
+    color: $color2;
+    opacity: 1;
+  }
+}
 body{
   font-family: $font-en;
 }
@@ -112,5 +249,18 @@ a, button {
   transition: all  0.3s ease;
   &:hover{
   opacity: 0.8;
+  cursor: pointer;
   }
+}
+button{
+    border: none;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
 }
