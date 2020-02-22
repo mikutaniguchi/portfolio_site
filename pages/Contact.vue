@@ -2,43 +2,46 @@
   <div>
     <h2 class="contact-title">Contact</h2>
     <div class="contact-main">
-      <div class="contact-main__form">
-        <form>
-          <div>
-            <label>お名前</label>
-            <br />
-            <input v-model="form.name.contents" type="text" />
-          </div>
-          <div>
-            <label>メールアドレス</label>
-            <br />
-            <input v-model="form.email.contents" type="text" />
-          </div>
-          <div>
-            <label>お問い合わせ内容</label>
-            <br />
-            <textarea v-model="form.message.contents" type="textarea" />
-          </div>
-          <div>
-            <button class="contact-main__form-button" type="button" @click="sendMail()">送信</button>
-          </div>
-        </form>
-      </div>
       <div class="contact-main__sns">
         <div class="contact-main__sns__item">
-          <a href>
+          <a href="https://twitter.com/milaaai2" target="_brank">
             <i class="fab fa-twitter"></i>
           </a>
         </div>
         <div class="contact-main__sns__item">
-          <a href>
+          <a href="https://www.instagram.com/milaaai/" target="_brank">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
         <div class="contact-main__sns__item">
-          <a href>
+          <a href="https://github.com/mikutaniguchi" target="_brank">
             <i class="fab fa-github"></i>
           </a>
+        </div>
+      </div>
+      <div class="contact-main__form">
+        <div>
+          <label>お名前</label>
+          <p class="validation-list__item">{{errors.name}}</p>
+          <input v-model="form.name.contents" type="text" />
+        </div>
+        <div>
+          <label>メールアドレス</label>
+          <p class="validation-list__item">{{errors.email}}</p>
+          <input v-model="form.email.contents" type="text" />
+        </div>
+        <div>
+          <label>お問い合わせ内容</label>
+          <p class="validation-list__item">{{errors.message}}</p>
+          <textarea v-model="form.message.contents" type="textarea" />
+        </div>
+        <div>
+          <button class="contact-main__form-button" @click="sendMail">送信</button>
+          <transition name="fade">
+            <div class="sentMessage" v-if="sentMessage">
+              <p>{{ sentMessage }}</p>
+            </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -48,7 +51,6 @@
 
 <script>
 import firebase from "~/plugins/firebase.js";
-// import { functions } from '@/plugins/firebase'
 
 export default {
   data: () => ({
@@ -56,18 +58,57 @@ export default {
       name: { contents: "" },
       email: { contents: "" },
       message: { contents: "" }
+    },
+    sentMessage: "",
+    errors: {
+      name: "",
+      email: "",
+      message: ""
     }
   }),
   methods: {
+    checkForm: function(e) {
+      this.errors = [];
+      if (!this.form.name.contents) {
+        this.errors.name = "お名前を入力してください";
+      }
+      if (!this.form.email.contents) {
+        this.errors.email = "メールアドレスを入力してください";
+      } else if (!this.validEmail(this.form.email.contents)) {
+        this.errors.email = "メールアドレスを正しく入力してください";
+      }
+      if (!this.form.message.contents) {
+        this.errors.message = "お問い合わせ内容を入力してください";
+      }
+      if (!this.errors.email && !this.errors.email && !this.errors.message) {
+        return true;
+      }
+      return false;
+    },
+    validEmail: function(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
     sendMail() {
+      if (!this.checkForm()) {
+        return;
+      }
       const form = this.form;
       const sendMail = firebase.functions().httpsCallable("sendMail");
       sendMail({ form })
         .then(response => {
-          alert(response);
+          this.sentMessage =
+            "お問い合わせありがとうございます。送信完了しました。";
+          setTimeout(() => {
+            this.sentMessage = false;
+          }, 3000);
+          this.form.name.contents = "";
+          this.form.email.contents = "";
+          this.form.message.contents = "";
         })
         .catch(error => {
-          alert(error);
+          this.sentMessage =
+            "送信できませんでした。もう一度ご入力をお願いします。";
         });
     }
   }
@@ -83,9 +124,10 @@ export default {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-bottom: 30px;
 
   @include tab {
-    flex-direction: row-reverse;
+    flex-direction: row;
     max-width: 800px;
   }
   .contact-main__sns {
@@ -95,7 +137,7 @@ export default {
     border-top: solid 1px $color-font;
     border-bottom: solid 1px $color-font;
     max-width: 60%;
-    margin: 40px auto;
+    margin: 0 auto 80px auto;
     @include tab {
       flex-direction: column;
       height: 230px;
@@ -147,5 +189,30 @@ textarea {
   font-size: 16px;
   border: solid 1px $color-font;
   @include btn;
+  margin: 0;
+}
+.sentMessage {
+  border: double 4px $color-font;
+  padding: 8px;
+  margin: 10px 0 30px 0;
+}
+.validation-list__item {
+  font-size: 14px;
+  color: red;
+}
+label {
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 30;
+    content: "必須";
+    font-size: 13px;
+    background: #e9bac6;
+    width: 32px;
+    text-align: center;
+    margin-left: 7px;
+    border-radius: 10%;
+  }
 }
 </style>
