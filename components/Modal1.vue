@@ -23,8 +23,8 @@
                   </li>
                   <li class="text__item-child">
                     HTML5/CSS3
-                    <p>▷BEM記法</p>
-                    <p>▷Sass(scss)</p>
+                    <p>▶︎BEM記法</p>
+                    <p>▶︎Sass(scss)</p>
                   </li>
                   <li class="text__item-child">
                     Vue.js
@@ -34,8 +34,8 @@
                   </li>
                   <li class="text__item-child">
                     Vue.js/plugins
-                    <p>▷vue-scrollto.js</p>
-                    <p>▷vue-awesome-swiper.js</p>
+                    <p>▶︎vue-scrollto.js</p>
+                    <p>▶︎vue-awesome-swiper.js</p>
                   </li>
                   <li class="text__item-child">
                     Firebase
@@ -45,7 +45,12 @@
                 </ul>
               </div>
               <div class="modal-text__item">
-                <button class="modal-text__item-btn">デザインカンプ</button>
+                <a
+                  href="https://xd.adobe.com/view/87c9eb8f-37d9-4606-4ca0-73f467a67202-f1f8/"
+                  target="_brank"
+                >
+                  <button class="modal-text__item-btn">デザインカンプ</button>
+                </a>
               </div>
             </div>
             <div class="modal-img">
@@ -125,33 +130,6 @@
   @include modalTextItem;
 }
 h1 {
-  font-size: 18px;
-  font-family: $font-ja;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  &::before,
-  &::after {
-    content: "";
-    z-index: 100;
-    position: absolute;
-    top: 50%;
-    display: inline-block;
-    width: 25%;
-    height: 1px;
-    background-color: #ffffff;
-    @include tab {
-      width: 15%;
-      background-color: black;
-    }
-  }
-  &:before {
-    left: 0;
-  }
-  &:after {
-    right: 0;
-  }
+  @include modal-h1;
 }
 </style>

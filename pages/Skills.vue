@@ -43,17 +43,17 @@ export default {
     return {
       front_skillItems: [
         {
-          name: "HTML",
+          name: "HTML5",
           level: "5/5",
           length: "length-5"
         },
         {
-          name: "CSS",
+          name: "CSS3",
           level: "5/5",
           length: "length-5"
         },
         {
-          name: "Bootstrap",
+          name: "Bootstrap4",
           level: "5/5",
           length: "length-5"
         },
@@ -79,8 +79,8 @@ export default {
         },
         {
           name: "Adobe Photoshop",
-          level: "3/5",
-          length: "length-3"
+          level: "2/5",
+          length: "length-2"
         }
       ],
       back_skillItems: [
@@ -101,19 +101,19 @@ export default {
         },
         {
           name: "PHP",
-          level: "3/5",
-          length: "length-3"
+          level: "2/5",
+          length: "length-2"
         },
         {
-          name: "Laravel",
-          level: "3/5",
-          length: "length-3"
-        },
-        {
-          name: "SQL",
+          name: "Laravel5.5",
           level: "2/5",
           length: "length-2"
         }
+        // {
+        //   name: "SQL",
+        //   level: "2/5",
+        //   length: "length-2"
+        // }
       ]
     };
   }
@@ -150,13 +150,11 @@ export default {
   }
 }
 .skills-main__frontend__skill {
-  height: 450px;
-  @include skills;
+  @include skills(450px);
 }
 
 .skills-main__backend__skill {
-  height: 300px;
-  @include skills;
+  @include skills(300px);
 }
 
 .length-2 {

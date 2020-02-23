@@ -23,9 +23,9 @@
                 <ul class="text__item">
                   <li class="text__item-child">
                     HTML5/CSS3
-                    <p>▷position,z-index</p>
-                    <p>▷CSSアニメーション</p>
-                    <p>▷FlexBox</p>
+                    <p>▶︎position,z-index</p>
+                    <p>▶︎CSSアニメーション</p>
+                    <p>▶︎FlexBox</p>
                   </li>
                   <li class="text__item-child">
                     Bootstrap
@@ -40,7 +40,9 @@
                 </ul>
               </div>
               <div class="modal-text__item">
-                <button class="modal-text__item-btn">実際の模写サイト</button>
+                <a href="https://unruffled-hermann-b67586.netlify.com/" target="_brank">
+                  <button class="modal-text__item-btn">実際の模写サイト</button>
+                </a>
               </div>
             </div>
             <div class="modal-img">
@@ -113,34 +115,6 @@
   @include modalTextItem;
 }
 h1 {
-  font-size: 18px;
-  font-family: $font-ja;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-
-  &::before,
-  &::after {
-    content: "";
-    z-index: 100;
-    position: absolute;
-    top: 50%;
-    display: inline-block;
-    width: 25%;
-    height: 1px;
-    background-color: #ffffff;
-    @include tab {
-      width: 15%;
-      background-color: black;
-    }
-  }
-  &:before {
-    left: 0;
-  }
-  &:after {
-    right: 0;
-  }
+  @include modal-h1;
 }
 </style>
