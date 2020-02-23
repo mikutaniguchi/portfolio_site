@@ -102,7 +102,7 @@
 }
 .modal-container__main {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   @include tab {
     flex-direction: row;
     justify-content: space-around;

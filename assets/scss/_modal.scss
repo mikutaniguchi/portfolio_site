@@ -56,7 +56,7 @@
 }
   @mixin closeButton{
   margin: auto;
-  margin-bottom: 40px;
+  margin: 40px auto;
   text-align: center;
   position: static;
   border-radius: 0;
@@ -88,13 +88,16 @@
     &-btn {
       @include btn;
       border: solid 1px #ffffff;
-      color: #ffffff;
-      background: none;
+      background: #ffffff;
       font-size: 15px;
       width: 100%;
-      margin-top: 20px;
+      margin:40px auto;
+      & a{
+        z-index: 1;
+      }
       @include tab {
         @include btn($color: #ffffff, $color2: $color-font);
+        margin:10px auto;
         border: solid 1px $color-font;
       }
     }
@@ -151,5 +154,16 @@
   }
   &:after {
     right: 0;
+  }
+}
+@mixin Modalimg($widthForPc) {
+  display: flex;
+  & img {
+    width: 95%;
+    margin: auto;
+    object-fit: contain;
+    @include tab {
+      width: $widthForPc;
+    }
   }
 }

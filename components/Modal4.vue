@@ -92,22 +92,17 @@
 }
 .modal-container__main {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: flex-start;
   @include tab {
     flex-direction: row;
     justify-content: space-around;
   }
 }
 .modal-img {
-  display: flex;
+  @include Modalimg(290px);
   & img {
-    width: 95%;
-    margin: auto;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
-    @include tab {
-      width: 290px;
-      object-fit: contain;
-    }
   }
 }
 .modal-text {
