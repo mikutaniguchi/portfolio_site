@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import Header from "@/components/header.vue";
+import Header from "@/components/Header.vue";
 import BackToTop from "@/components/BackToTop.vue";
 export default {
   components: {
@@ -19,8 +19,7 @@ export default {
 </script>
 <style lang="scss">
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

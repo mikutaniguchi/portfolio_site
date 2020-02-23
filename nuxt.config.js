@@ -71,9 +71,6 @@ export default {
   ** Build configuration
   */
   build: {
-    vendor: [
-      'vue-awesome-swiper'
-    ],
     transpile: [
       "vee-validate/dist/rules"
     ],

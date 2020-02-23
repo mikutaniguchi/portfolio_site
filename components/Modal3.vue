@@ -46,7 +46,7 @@
               </div>
             </div>
             <div class="modal-img">
-              <img src="../assets/img/SANGO_pc.png" alt />
+              <img src="../assets/img/SANGO_PC.png" alt />
             </div>
           </div>
           <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
