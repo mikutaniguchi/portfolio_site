@@ -2,31 +2,11 @@
   <div>
     <h2 class="about-title">About</h2>
     <swiper :options="swiperOption">
-      <swiper-slide>
+      <swiper-slide v-for="(aboutItem,index) in aboutItems" :key="index">
         <div class="about-article">
-          <img src="../assets/img/about_bakery.png" alt />
-          <p class="about-article__title">パン作り</p>
-          <p
-            class="about-article__text"
-          >去年からパン作りにハマり、時々家族や友人に作っています。昔から細かい作業が好きで、手芸やアクセサリー作りに夢中になっている時期もありました。細かい工程が好きなのでメロンパンはよく作ります。</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="about-article">
-          <img src="../assets/img/domesticTrip.png" alt />
-          <p class="about-article__title">国内旅行</p>
-          <p
-            class="about-article__text"
-          >自然のアクティビティや綺麗な景色、美味しい食べ物巡りが好きです。宮古島ではシュノーケリング、野沢温泉ではスノーボードを楽しみました。最近では伊豆方面に行って海鮮丼を食べたり海の見えるカフェでまったりしたりします。</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="about-article">
-          <img src="../assets/img/abroad.png" alt />
-          <p class="about-article__title">海外</p>
-          <p
-            class="about-article__text"
-          >ワーキングホリデービザを使ってNZで9ヶ月間過ごしました。壮大な自然の中、様々な国の友人を作って英語上達と海外生活を楽しみました。ただ、食べ物は日本が一番と気づき、今後の拠点は日本だと確信しました。</p>
+          <img :src="aboutItem.img" alt />
+          <p class="about-article__title">{{aboutItem.title}}</p>
+          <p class="about-article__text">{{aboutItem.text}}</p>
         </div>
       </swiper-slide>
       <div class="swiper-button-prev" slot="button-prev"></div>
@@ -38,6 +18,26 @@
 export default {
   data() {
     return {
+      aboutItems: [
+        {
+          img: require("../assets/img/about_bakery.png"),
+          title: "パン作り",
+          text:
+            "去年からパン作りにハマり、時々家族や友人に作っています。昔から細かい作業が好きで、手芸やアクセサリー作りに夢中になっている時期もありました。細かい工程が好きなのでメロンパンはよく作ります。"
+        },
+        {
+          img: require("../assets/img/domesticTrip.png"),
+          title: "国内旅行",
+          text:
+            "自然のアクティビティや綺麗な景色、美味しい食べ物巡りが好きです。宮古島ではシュノーケリング、野沢温泉ではスノーボードを楽しみました。最近では伊豆方面に行って海鮮丼を食べたり海の見えるカフェでまったりしたりします。"
+        },
+        {
+          img: require("../assets/img/abroad.png"),
+          title: "海外",
+          text:
+            "ワーキングホリデービザを使ってNZで9ヶ月間過ごしました。壮大な自然の中、様々な国の友人を作って英語上達と海外生活を楽しみました。ただ、食べ物は日本が一番と気づき、今後の拠点は日本だと確信しました。"
+        }
+      ],
       swiperOption: {
         navigation: {
           nextEl: ".swiper-button-next",
@@ -82,17 +82,17 @@ export default {
   }
 }
 @mixin slider {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
+  outline: none;
   width: 50px;
   height: 50px;
   border-radius: 50px;
   margin-bottom: 50px;
-  outline: none;
   background-size: 30px 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
   @include tab {
     width: 80px;
     height: 80px;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
   }
 }
 .swiper-button-prev {

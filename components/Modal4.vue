@@ -10,38 +10,44 @@
             <div class="modal-text">
               <div class="modal-text__item">
                 <h1>制作</h1>
-                <p>時期：2019年12月</p>
-                <p>時間：20時間</p>
-                <p>※PCサイズのみ</p>
-                <p>※元コードは参照せず</p>
+                <p>
+                  旅行の写真を共有する
+                  <br />サービスを作りました。
+                </p>
+                <p>時期：2019年7月</p>
+                <p>時間：30時間</p>
               </div>
               <div class="modal-text__item">
                 <h1>使ったもの</h1>
                 <ul class="text__item">
                   <li class="text__item-child">
-                    HTML5/CSS3
-                    <p>▷position,z-index</p>
-                    <p>▷CSSアニメーション</p>
-                    <p>▷FlexBox</p>
+                    PHP/Laravel
+                    <p>▶︎投稿、編集、削除</p>
+                    <p>▶︎検索</p>
+                    <p>▶︎新規登録、ログイン</p>
                   </li>
                   <li class="text__item-child">
-                    Bootstrap
-                    <p>▶︎タブ切り替え</p>
-                    <p>▶︎検索項目</p>
+                    Bootstrap4
+                    <p>▶︎レスポンシブ</p>
+                    <p>▶︎画面レイアウト</p>
+                    <p>▶︎ボタン、装飾</p>
                   </li>
                   <li class="text__item-child">
-                    その他
-                    <p>▶︎Fontawesome</p>
+                    AWS
+                    <p>▶︎Cloud9</p>
+                    <p>▶︎S3</p>
                   </li>
                   <li class="text__item-child"></li>
                 </ul>
               </div>
               <div class="modal-text__item">
-                <button class="modal-text__item-btn">実際の模写サイト</button>
+                <a href="https://tripper-miku.herokuapp.com/" target="_brank">
+                  <button class="modal-text__item-btn">実際作ったサイト</button>
+                </a>
               </div>
             </div>
             <div class="modal-img">
-              <img src="../assets/img/SANGO_pc.png" alt />
+              <img src="../assets/img/Tripper.png" alt />
             </div>
           </div>
           <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
@@ -97,8 +103,9 @@
   & img {
     width: 95%;
     margin: auto;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
     @include tab {
-      width: 260px;
+      width: 290px;
       object-fit: contain;
     }
   }
@@ -110,34 +117,6 @@
   @include modalTextItem;
 }
 h1 {
-  font-size: 18px;
-  font-family: $font-ja;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-
-  &::before,
-  &::after {
-    content: "";
-    z-index: 100;
-    position: absolute;
-    top: 50%;
-    display: inline-block;
-    width: 25%;
-    height: 1px;
-    background-color: #ffffff;
-    @include tab {
-      width: 15%;
-      background-color: black;
-    }
-  }
-  &:before {
-    left: 0;
-  }
-  &:after {
-    right: 0;
-  }
+  @include modal-h1;
 }
 </style>

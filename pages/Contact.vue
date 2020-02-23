@@ -3,19 +3,9 @@
     <h2 class="contact-title">Contact</h2>
     <div class="contact-main">
       <div class="contact-main__sns">
-        <div class="contact-main__sns__item">
-          <a href="https://twitter.com/milaaai2" target="_brank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-        <div class="contact-main__sns__item">
-          <a href="https://www.instagram.com/milaaai/" target="_brank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
-        <div class="contact-main__sns__item">
-          <a href="https://github.com/mikutaniguchi" target="_brank">
-            <i class="fab fa-github"></i>
+        <div class="contact-main__sns__item" v-for="(snsItem,index) in snsItems" :key="index">
+          <a href="snsItem.url" target="_brank">
+            <i :class="snsItem.class"></i>
           </a>
         </div>
       </div>
@@ -54,6 +44,20 @@ import firebase from "~/plugins/firebase.js";
 
 export default {
   data: () => ({
+    snsItems: [
+      {
+        url: "https://github.com/mikutaniguchi",
+        class: "fab fa-github"
+      },
+      {
+        url: "https://www.instagram.com/milaaai/",
+        class: "fab fa-instagram"
+      },
+      {
+        url: "https://twitter.com/milaaai2",
+        class: "fab fa-twitter"
+      }
+    ],
     form: {
       name: { contents: "" },
       email: { contents: "" },
