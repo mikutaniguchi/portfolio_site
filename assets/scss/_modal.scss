@@ -157,10 +157,9 @@
   }
 }
 @mixin Modalimg($widthForPc) {
-  display: flex;
+    text-align: center;
   & img {
     width: 95%;
-    margin: auto;
     object-fit: contain;
     @include tab {
       width: $widthForPc;

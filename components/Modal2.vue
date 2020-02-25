@@ -52,8 +52,8 @@
             <div class="modal-img">
               <img src="../assets/img/PAS-POL_PC.png" alt />
             </div>
+            <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
           </div>
-          <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
         </div>
       </div>
     </div>
@@ -94,10 +94,8 @@
   transform: scale(1.1);
 }
 .modal-container__main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   @include tab {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
