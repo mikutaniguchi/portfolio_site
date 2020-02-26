@@ -4,7 +4,7 @@
     <div class="contact-main">
       <div class="contact-main__sns">
         <div class="contact-main__sns__item" v-for="(snsItem,index) in snsItems" :key="index">
-          <a href="snsItem.url" target="_brank">
+          <a :href="snsItem.url" target="_brank">
             <i :class="snsItem.class"></i>
           </a>
         </div>
@@ -25,7 +25,7 @@
           <p class="validation-list__item">{{errors.message}}</p>
           <textarea v-model="form.message.contents" type="textarea" />
         </div>
-        <div>
+        <div class="space-end">
           <button class="contact-main__form-button" @click="sendMail">送信</button>
           <transition name="fade">
             <div class="sentMessage" v-if="sentMessage">
@@ -218,5 +218,8 @@ label {
     margin-left: 7px;
     border-radius: 10%;
   }
+}
+.space-end {
+  margin-bottom: 70px;
 }
 </style>

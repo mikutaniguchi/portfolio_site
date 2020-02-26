@@ -39,7 +39,7 @@
                   <li class="text__item-child"></li>
                 </ul>
               </div>
-              <div class="modal-text__item">
+              <div class="modal-text__item displayNone">
                 <a href="https://unruffled-hermann-b67586.netlify.com/" target="_brank">
                   <button class="modal-text__item-btn">実際の模写サイト</button>
                 </a>
@@ -91,22 +91,15 @@
 }
 .modal-container__main {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: flex-start;
   @include tab {
     flex-direction: row;
     justify-content: space-around;
   }
 }
 .modal-img {
-  display: flex;
-  & img {
-    width: 95%;
-    margin: auto;
-    @include tab {
-      width: 260px;
-      object-fit: contain;
-    }
-  }
+  @include Modalimg(260px);
 }
 .modal-text {
   @include modalText;
@@ -116,5 +109,11 @@
 }
 h1 {
   @include modal-h1;
+}
+.displayNone {
+  display: none;
+  @include tab {
+    display: block;
+  }
 }
 </style>
