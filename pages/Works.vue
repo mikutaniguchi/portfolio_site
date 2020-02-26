@@ -3,10 +3,10 @@
     <h2 class="works-title">Works</h2>
     <div class="works-main">
       <div class="works-main__item" v-for="(worksItem,index) in worksItems" :key="index">
-        <img :src="worksItem.img" alt style="pointer-events:none;" />
+        <img :src="worksItem.img" alt />
         <button :class="worksItem.class" @click="showModal">
-          <p class="works-main__item__title" style="pointer-events:none;">{{worksItem.title}}</p>
-          <p class="works-main__item__text" style="pointer-events:none;">{{worksItem.text}}</p>
+          <p class="works-main__item__title">{{worksItem.title}}</p>
+          <p class="works-main__item__text">{{worksItem.text}}</p>
         </button>
       </div>
     </div>
@@ -33,13 +33,13 @@ export default {
   methods: {
     showModal(e) {
       console.log(e.target.classList);
-      if (e.target.classList.contains("class1")) {
+      if (e.target.classList.contains("model1")) {
         this.isVisible1 = true;
-      } else if (e.target.classList.contains("class2")) {
+      } else if (e.target.classList.contains("model2")) {
         this.isVisible2 = true;
-      } else if (e.target.classList.contains("class3")) {
+      } else if (e.target.classList.contains("model3")) {
         this.isVisible3 = true;
-      } else if (e.target.classList.contains("class4")) {
+      } else if (e.target.classList.contains("model4")) {
         this.isVisible4 = true;
       }
     }
@@ -55,25 +55,25 @@ export default {
           img: require("../assets/img/portfolio_site.png"),
           title: "このサイト",
           text: "Nuxt.js/Firebase",
-          class: "class1"
+          class: "model1"
         },
         {
           img: require("../assets/img/PAS-POL.png"),
           title: "模写1",
           text: "HTML/CSS(scss)/jQuery",
-          class: "class2"
+          class: "model2"
         },
         {
           img: require("../assets/img/SANGO.png"),
           title: "模写2",
           text: "HTML/CSS/Bootstrap",
-          class: "class3"
+          class: "model3"
         },
         {
           img: require("../assets/img/PHPService.png"),
           title: "写真共有サービス",
           text: "PHP/Laravel",
-          class: "class4"
+          class: "model4"
         }
       ]
     };
