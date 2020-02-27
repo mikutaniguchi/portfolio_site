@@ -108,12 +108,12 @@ export default {
           name: "Laravel5.5",
           level: "2/5",
           length: "length-2"
+        },
+        {
+          name: "SQL",
+          level: "2/5",
+          length: "length-2"
         }
-        // {
-        //   name: "SQL",
-        //   level: "2/5",
-        //   length: "length-2"
-        // }
       ]
     };
   }

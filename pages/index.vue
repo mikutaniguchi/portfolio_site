@@ -42,7 +42,7 @@
   &-img {
     & img {
       width: 100%;
-      height: 700px;
+      height: 100vh;
       object-fit: cover;
       @include tab {
         width: 350px;
@@ -94,8 +94,9 @@
       color: #ffffff;
       position: absolute;
       bottom: 90px;
-      left: 3%;
-      z-index: 2;
+      left: 4%;
+      margin: auto;
+      z-index: 1;
       width: 95%;
       @include tab {
         position: static;

@@ -37,7 +37,7 @@ html {
 }
 
 main {
-  height: 90vh;
+  height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
 }
