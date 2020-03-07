@@ -12,7 +12,7 @@
                 <h1>制作</h1>
                 <p>
                   旅行の写真を共有する
-                  <br />サービスを作りました。
+                  <br class="br-display" />サービスを作りました。
                 </p>
                 <p>時期：2019年7月</p>
                 <p>時間：30時間</p>
@@ -42,7 +42,7 @@
               </div>
               <div class="modal-text__item">
                 <a href="https://tripper-miku.herokuapp.com/" target="_brank">
-                  <button class="modal-text__item-btn">実際作ったサイト</button>
+                  <button class="modal-text__item-btn">実際作ったものを見る</button>
                 </a>
               </div>
             </div>
@@ -113,5 +113,11 @@
 }
 h1 {
   @include modal-h1;
+}
+.br-display {
+  display: none;
+  @include tab {
+    display: block;
+  }
 }
 </style>

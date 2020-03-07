@@ -49,7 +49,7 @@
                   href="https://xd.adobe.com/view/87c9eb8f-37d9-4606-4ca0-73f467a67202-f1f8/"
                   target="_brank"
                 >
-                  <button class="modal-text__item-btn">デザインカンプ</button>
+                  <button class="modal-text__item-btn">XDのデザインを見る</button>
                 </a>
               </div>
             </div>

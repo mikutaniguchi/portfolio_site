@@ -109,12 +109,14 @@ export default {
     &__title {
       font-weight: 700;
       font-size: 15px;
+      pointer-events: none;
       @include tab {
         font-size: 18px;
       }
     }
     &__text {
       font-size: 14px;
+      pointer-events: none;
     }
   }
 }

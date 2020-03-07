@@ -12,7 +12,7 @@
                 <h1>制作</h1>
                 <p>
                   SANGO様を模写
-                  <br />させていただきました。
+                  <br class="br-display" />させていただきました。
                 </p>
                 <p>時期：2019年12月</p>
                 <p>時間：20時間</p>
@@ -41,7 +41,7 @@
               </div>
               <div class="modal-text__item displayNone">
                 <a href="https://unruffled-hermann-b67586.netlify.com/" target="_brank">
-                  <button class="modal-text__item-btn">実際の模写サイト</button>
+                  <button class="modal-text__item-btn">実際作ったものを見る</button>
                 </a>
               </div>
             </div>
@@ -111,6 +111,12 @@ h1 {
   @include modal-h1;
 }
 .displayNone {
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
+.br-display {
   display: none;
   @include tab {
     display: block;
