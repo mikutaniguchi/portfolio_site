@@ -5,7 +5,7 @@
   "author": "谷口未来",
   "private": true,
   "scripts": {
-    "dev": "NUXT_HOST=10.1.5.73 NUXT_PORT=3333 nuxt",
+    "dev": "NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
