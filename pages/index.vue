@@ -16,8 +16,6 @@
     </div>
   </div>
 </template>
-
-
 <style lang="scss">
 .center {
   margin: 0 auto;
@@ -27,8 +25,6 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   @include tab {
     position: static;
     flex-direction: row;
@@ -38,31 +34,29 @@
 
   &__item2 {
     align-self: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    @include tab {
+      flex-direction: column;
+    }
   }
   &-img {
+    width: 95%;
+    margin: 0 auto;
+    @include tab {
+      width: auto;
+    }
     & img {
-      width: 100%;
-      height: 100vh;
+      width: 60%;
       object-fit: cover;
+      margin-top: 1em;
+      text-align: center;
       @include tab {
         width: 350px;
         height: 100%;
-        padding-left: 10px;
       }
       @include pc {
         padding-left: 20px;
-      }
-    }
-    &-img::after {
-      background-color: rgba(0, 0, 0, 0.4);
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: " ";
-      @include tab {
-        background-color: rgba(0, 0, 0, 0);
       }
     }
 
@@ -73,47 +67,41 @@
       @include tab {
         border: solid 1px #707070;
         padding-left: 10px;
-        width: 300px;
-        height: 400px;
+        width: 320px;
+        height: 420px;
         position: absolute;
         top: 60px;
-        right: 65px;
+        right: 60px;
         z-index: -1;
       }
       @include pc {
-        top: 80px;
-        right: 80px;
+        top: 85px;
+        right: 60px;
       }
     }
   }
   &__main {
-    max-width: 580px;
-    padding-left: 2em;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    @include tab {
+      padding-left: 2em;
+      max-width: 580px;
+    }
     &__text {
       @include text;
-      color: #ffffff;
-      position: absolute;
-      bottom: 90px;
-      left: 4%;
-      margin: auto;
-      z-index: 1;
-      width: 95%;
-      @include tab {
-        position: static;
-        color: black;
-        font-weight: 400;
-        width: 100%;
-      }
+      margin-top: 1em;
     }
     &__title {
       position: absolute;
-      top: 30px;
-      left: 3%;
-      font-size: 80px;
-      color: #ffffff;
+      top: -3em;
+      font-size: 60px;
+      color: #3f3f3f;
+      text-align: right;
       @include tab {
+        font-size: 80px;
+        text-align: left;
         position: static;
-        color: #3f3f3f;
       }
     }
   }

@@ -7,14 +7,14 @@
         <div class="skills-main__frontend__skill">
           <div
             class="skills-main__frontend__skillItems"
-            v-for="(front_skillItem,index) in front_skillItems"
+            v-for="(front_skillItem, index) in front_skillItems"
             :key="index"
           >
-            <p class="skills-main__frontend__skillItems-name">{{front_skillItem.name}}</p>
+            <p class="skills-main__frontend__skillItems-name">{{ front_skillItem.name }}</p>
             <div
               class="skills-main__frontend__skillItems-level"
               :class="front_skillItem.length"
-            >{{front_skillItem.level}}</div>
+            >{{ front_skillItem.level }}</div>
           </div>
         </div>
       </div>
@@ -23,14 +23,14 @@
         <div class="skills-main__backend__skill">
           <div
             class="skills-main__frontend__skillItems"
-            v-for="(back_skillItem,index) in back_skillItems"
+            v-for="(back_skillItem, index) in back_skillItems"
             :key="index"
           >
-            <p class="skills-main__frontend__skillItems-name">{{back_skillItem.name}}</p>
+            <p class="skills-main__frontend__skillItems-name">{{ back_skillItem.name }}</p>
             <div
               class="skills-main__frontend__skillItems-level"
               :class="back_skillItem.length"
-            >{{back_skillItem.level}}</div>
+            >{{ back_skillItem.level }}</div>
           </div>
         </div>
       </div>
@@ -53,12 +53,12 @@ export default {
           length: "length-5"
         },
         {
-          name: "Bootstrap4",
-          level: "5/5",
-          length: "length-5"
+          name: "Sass(scss)",
+          level: "4/5",
+          length: "length-4"
         },
         {
-          name: "Sass(scss)",
+          name: "WordPress",
           level: "4/5",
           length: "length-4"
         },
@@ -74,11 +74,11 @@ export default {
         },
         {
           name: "Adobe XD",
-          level: "4/5",
-          length: "length-4"
+          level: "2/5",
+          length: "length-2"
         },
         {
-          name: "Adobe Photoshop",
+          name: "Adobe Illustrator",
           level: "2/5",
           length: "length-2"
         }

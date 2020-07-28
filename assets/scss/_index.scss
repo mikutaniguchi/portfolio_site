@@ -1,7 +1,8 @@
-@import 'modal.scss';
+@import "modal.scss";
 
-$font-ja:Helvetica, 游ゴシック, "Yu Gothic", YuGothic, HiraKakuProN-W3, メイリオ, Meiryo, sans-serif;
-$font-en:'Lato', sans-serif;
+$font-ja: Helvetica, 游ゴシック, "Yu Gothic", YuGothic, HiraKakuProN-W3,
+  メイリオ, Meiryo, sans-serif;
+$font-en: "Lato", sans-serif;
 $color-font: #3f3f3f;
 
 $tab: 768px; // タブレット
@@ -51,31 +52,31 @@ $pc: 1024px; // PC
   border: 0;
   padding: 10px;
   border: solid 1px #ccc;
-  margin-bottom:30px;
+  margin-bottom: 30px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  transition :0.5s;
+  transition: 0.5s;
   width: 100%;
-  &:focus{
-    box-shadow:  1px 1px 3px 1px #d3d3d3;
+  &:focus {
+    box-shadow: 1px 1px 3px 1px #d3d3d3;
   }
 }
 
-@mixin skills($height){
+@mixin skills($height) {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: $height;
   &Items {
     margin: 25px 30px 25px 0;
-    @include tab{
+    @include tab {
       margin: 25px 40px 25px 0;
     }
     &-name {
       font-weight: 700;
       font-size: 15px;
-      @include tab{
+      @include tab {
         font-size: 20px;
       }
     }
@@ -95,7 +96,7 @@ $pc: 1024px; // PC
         height: 25px;
         border-radius: 7px;
         width: 125px;
-        @include tab{
+        @include tab {
           width: 200px;
         }
       }
@@ -103,7 +104,7 @@ $pc: 1024px; // PC
   }
 }
 
-@mixin btn($color:$color-font,$color2:#ffffff) {
+@mixin btn($color: $color-font, $color2: #ffffff) {
   background-color: $color2;
   color: $color;
   line-height: 40px;
@@ -114,31 +115,35 @@ $pc: 1024px; // PC
     opacity: 1;
   }
 }
-body{
+body {
   font-family: $font-en;
 }
 
-a, button {
+a,
+button {
   text-decoration: none;
   color: $color-font;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all  0.3s ease;
-  &:hover{
-  opacity: 0.8;
-  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 }
-button{
-    border: none;
-    outline: none;
-    padding: 0;
-    appearance: none;
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  appearance: none;
 }
-ul{
+ul {
   padding: 0;
 }
-li{
+li {
   list-style: none;
+}
+p {
+  text-align: justify;
 }

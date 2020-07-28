@@ -3,13 +3,13 @@
     <div class="inner header-flex">
       <div>
         <p class="navbar__brand">
-          <nuxt-link to="/">Profile</nuxt-link>
+          <nuxt-link to="/">Miku Taniguchi</nuxt-link>
         </p>
       </div>
       <div>
         <ul class="navbar__menu">
-          <li v-for="(menuItem,index) in menuItems" :key="index">
-            <nuxt-link :to="menuItem.url">{{menuItem.name}}</nuxt-link>
+          <li v-for="(menuItem, index) in menuItems" :key="index">
+            <nuxt-link :to="menuItem.url">{{ menuItem.name }}</nuxt-link>
           </li>
         </ul>
       </div>
@@ -22,28 +22,29 @@ export default {
     return {
       menuItems: [
         {
-          name: "Home",
-          url: "/"
+          name: "Skills",
+          url: "/skills",
         },
+
         {
           name: "About",
-          url: "/about"
+          url: "/about",
         },
         {
-          name: "Skills",
-          url: "/skills"
-        },
-        {
-          name: "Works",
-          url: "/works"
+          name: "Blog",
+          url: "/blog",
         },
         {
           name: "Contact",
-          url: "/contact"
-        }
-      ]
+          url: "/contact",
+        },
+        // {
+        //   name: "Works",
+        //   url: "/works",
+        // },
+      ],
     };
-  }
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -53,12 +54,12 @@ a {
 }
 .header {
   background: #ffffff;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 55px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   @include tab {
     line-height: 65px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .header-flex {
@@ -74,12 +75,12 @@ a {
 }
 .navbar__brand {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 20px;
   padding-left: 10px;
   border-bottom: solid 1px #c2c2c2;
   @include tab {
     border-bottom: none;
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 .navbar__menu {
@@ -92,38 +93,32 @@ a {
     width: 50%;
     border-bottom: solid 1px #c2c2c2;
     &:nth-child(1n) {
+      border-right: solid 1px #c2c2c2;
       &:hover {
         background: #e5e8e1;
       }
     }
-    &:nth-child(2n) {
-      border-right: solid 1px #c2c2c2;
+    &:nth-child(2) {
       &:hover {
         background: #f7f1d7;
       }
     }
-    &:nth-child(3n) {
+    &:nth-child(3) {
       &:hover {
         background: #e0e3e4;
       }
     }
-    &:nth-child(4n) {
+    &:nth-child(4) {
       &:hover {
         background: #f7e1d7;
       }
-    }
-    &:first-child {
-      display: none;
     }
     @include tab {
       width: 110px;
       text-align: center;
       border-bottom: none;
-      &:nth-child(2n) {
+      &:nth-child(1n) {
         border-right: none;
-      }
-      &:first-child {
-        display: inline-block;
       }
     }
     &:hover {

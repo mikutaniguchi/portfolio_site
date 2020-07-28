@@ -2,11 +2,15 @@
   <div>
     <h2 class="works-title">Works</h2>
     <div class="works-main">
-      <div class="works-main__item" v-for="(worksItem,index) in worksItems" :key="index">
+      <div
+        class="works-main__item"
+        v-for="(worksItem, index) in worksItems"
+        :key="index"
+      >
         <img :src="worksItem.img" alt />
         <button :class="worksItem.class" @click="showModal">
-          <p class="works-main__item__title">{{worksItem.title}}</p>
-          <p class="works-main__item__text">{{worksItem.text}}</p>
+          <p class="works-main__item__title">{{ worksItem.title }}</p>
+          <p class="works-main__item__text">{{ worksItem.text }}</p>
         </button>
       </div>
     </div>
@@ -59,13 +63,13 @@ export default {
         },
         {
           img: require("../assets/img/PAS-POL.png"),
-          title: "模写1",
+          title: "コーディング模写1",
           text: "HTML/CSS(scss)/jQuery",
           class: "model2"
         },
         {
           img: require("../assets/img/SANGO.png"),
-          title: "模写2",
+          title: "コーディング模写2",
           text: "HTML/CSS/Bootstrap",
           class: "model3"
         },
@@ -97,19 +101,19 @@ export default {
     font-family: $font-ja;
     margin-bottom: 50px;
     max-width: 90%;
-    text-align: center;
     @include tab {
       width: 450px;
       height: 100%;
     }
     & img {
       width: 100%;
-      box-shadow: 1px 1px 3px 1px #d3d3d3;
+      box-shadow: 1px 1px 2px 1px #d3d3d3;
     }
     &__title {
       font-weight: 700;
       font-size: 15px;
       pointer-events: none;
+      text-align: center;
       @include tab {
         font-size: 18px;
       }
@@ -117,6 +121,7 @@ export default {
     &__text {
       font-size: 14px;
       pointer-events: none;
+      text-align: center;
     }
   }
 }

@@ -2,11 +2,11 @@
   <div>
     <h2 class="about-title">About</h2>
     <swiper :options="swiperOption">
-      <swiper-slide v-for="(aboutItem,index) in aboutItems" :key="index">
+      <swiper-slide v-for="(aboutItem, index) in aboutItems" :key="index">
         <div class="about-article">
           <img :src="aboutItem.img" alt />
-          <p class="about-article__title">{{aboutItem.title}}</p>
-          <p class="about-article__text">{{aboutItem.text}}</p>
+          <p class="about-article__title">{{ aboutItem.title }}</p>
+          <p class="about-article__text">{{ aboutItem.text }}</p>
         </div>
       </swiper-slide>
       <div class="swiper-button-prev" slot="button-prev"></div>
@@ -92,7 +92,10 @@ export default {
   @include tab {
     width: 80px;
     height: 80px;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 3px 2px 0px rgba(0, 0, 0, 0.2);
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 .swiper-button-prev {
