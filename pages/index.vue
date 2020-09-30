@@ -11,7 +11,10 @@
         <p
           class="main-visual__main__text"
         >気になったことはやってみる好奇心旺盛な性格。旅行が好きで宮古島、野沢温泉、ニュージーランドに長期滞在しながら旅をする生活をしていた。もともと何かを作ることが好きで、実際にプログラミングを始めた時に楽しいと感じてエンジニアに転職。デザインに強いフロントエンドエンジニアを目指して日々修行中。</p>
-        <h1 class="main-visual__main__title">Miku Taniguchi</h1>
+        <h1 class="main-visual__main__title">
+          Miku
+          <br class="sp_br" />Taniguchi
+        </h1>
       </div>
     </div>
   </div>
@@ -41,19 +44,22 @@
     }
   }
   &-img {
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
+    text-align: center;
     @include tab {
       width: auto;
+      text-align: left;
     }
     & img {
-      width: 60%;
+      width: 87%;
       object-fit: cover;
-      margin-top: 1em;
+      margin-top: 2.5em;
       text-align: center;
       @include tab {
         width: 350px;
         height: 100%;
+        margin-top: 1em;
       }
       @include pc {
         padding-left: 20px;
@@ -90,20 +96,31 @@
     }
     &__text {
       @include text;
-      margin-top: 1em;
+      margin-top: 2em;
+      @include tab {
+        margin-top: 1em;
+      }
     }
     &__title {
       position: absolute;
-      top: -3em;
-      font-size: 60px;
-      color: #3f3f3f;
-      text-align: right;
+      top: -2.5em;
+      left: 12%;
+      font-size: 47px;
+      color: #fffff0;
+      text-align: left;
       @include tab {
+        color: #3f3f3f;
         font-size: 80px;
         text-align: left;
         position: static;
       }
     }
+  }
+}
+.sp_br {
+  display: block;
+  @include tab {
+    display: none;
   }
 }
 </style>
