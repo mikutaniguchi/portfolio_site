@@ -40,11 +40,11 @@
                   <li class="text__item-child"></li>
                 </ul>
               </div>
-              <div class="modal-text__item">
+              <!-- <div class="modal-text__item">
                 <a href="https://tripper-miku.herokuapp.com/" target="_brank">
                   <button class="modal-text__item-btn">実際作ったものを見る</button>
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="modal-img">
               <img src="../assets/img/Tripper.png" alt />

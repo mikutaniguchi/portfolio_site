@@ -44,7 +44,7 @@
                 </ul>
               </div>
               <div class="modal-text__item">
-                <a href="https://musing-ritchie-066dbe.netlify.com/" target="_brank">
+                <a href="https://copypas.netlify.app" target="_brank">
                   <button class="modal-text__item-btn">実際作ったものを見る</button>
                 </a>
               </div>

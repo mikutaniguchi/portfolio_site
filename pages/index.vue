@@ -8,9 +8,8 @@
         <div class="main-visual-img-line"></div>
       </div>
       <div class="main-visual__main main-visual__item2">
-        <p
-          class="main-visual__main__text"
-        >気になったことはやってみる好奇心旺盛な性格。旅行が好きで宮古島、野沢温泉、ニュージーランドに長期滞在しながら旅をする生活をしていた。もともと何かを作ることが好きで、実際にプログラミングを始めた時に楽しいと感じてエンジニアに転職。デザインに強いフロントエンドエンジニアを目指して日々修行中。</p>
+        <p class="main-visual__main__text">
+          気になったことはやってみる好奇心旺盛な性格。旅行が好きで宮古島、野沢温泉、ニュージーランドに長期滞在しながら旅をする生活をしていた。もともと何かを作ることが好きで、実際にプログラミングを始めた時に楽しいと感じてエンジニアに転職。デザインに強いフロントエンドエンジニアを目指して日々修行中。</p>
         <h1 class="main-visual__main__title">
           Miku
           <br class="sp_br" />Taniguchi

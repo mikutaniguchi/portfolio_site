@@ -40,7 +40,7 @@
                 </ul>
               </div>
               <div class="modal-text__item displayNone">
-                <a href="https://unruffled-hermann-b67586.netlify.com/" target="_brank">
+                <a href="https://copysan.netlify.app" target="_brank">
                   <button class="modal-text__item-btn">実際作ったものを見る</button>
                 </a>
               </div>
