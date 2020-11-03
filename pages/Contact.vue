@@ -3,8 +3,12 @@
     <h2 class="contact-title">Contact</h2>
     <div class="contact-main">
       <div class="contact-main__sns">
-        <div class="contact-main__sns__item" v-for="(snsItem,index) in snsItems" :key="index">
-          <a :href="snsItem.url" target="_brank">
+        <div
+          class="contact-main__sns__item"
+          v-for="(snsItem, index) in snsItems"
+          :key="index"
+        >
+          <a :href="snsItem.url" target="_brank" rel="noopener noreferrer">
             <i :class="snsItem.class"></i>
           </a>
         </div>
@@ -12,21 +16,23 @@
       <div class="contact-main__form">
         <div>
           <label>お名前</label>
-          <p class="validation-list__item">{{errors.name}}</p>
+          <p class="validation-list__item">{{ errors.name }}</p>
           <input v-model="form.name.contents" type="text" />
         </div>
         <div>
           <label>メールアドレス</label>
-          <p class="validation-list__item">{{errors.email}}</p>
+          <p class="validation-list__item">{{ errors.email }}</p>
           <input v-model="form.email.contents" type="text" />
         </div>
         <div>
           <label>お問い合わせ内容</label>
-          <p class="validation-list__item">{{errors.message}}</p>
+          <p class="validation-list__item">{{ errors.message }}</p>
           <textarea v-model="form.message.contents" type="textarea" />
         </div>
         <div class="space-end">
-          <button class="contact-main__form-button" @click="sendMail">送信</button>
+          <button class="contact-main__form-button" @click="sendMail">
+            送信
+          </button>
           <transition name="fade">
             <div class="sentMessage" v-if="sentMessage">
               <p>{{ sentMessage }}</p>
@@ -47,31 +53,31 @@ export default {
     snsItems: [
       {
         url: "https://github.com/mikutaniguchi",
-        class: "fab fa-github"
+        class: "fab fa-github",
       },
       {
         url: "https://www.instagram.com/milaaai/",
-        class: "fab fa-instagram"
+        class: "fab fa-instagram",
       },
       {
         url: "https://twitter.com/milaaai2",
-        class: "fab fa-twitter"
-      }
+        class: "fab fa-twitter",
+      },
     ],
     form: {
       name: { contents: "" },
       email: { contents: "" },
-      message: { contents: "" }
+      message: { contents: "" },
     },
     sentMessage: "",
     errors: {
       name: "",
       email: "",
-      message: ""
-    }
+      message: "",
+    },
   }),
   methods: {
-    checkForm: function(e) {
+    checkForm: function (e) {
       this.errors = [];
       if (!this.form.name.contents) {
         this.errors.name = "お名前を入力してください";
@@ -89,7 +95,7 @@ export default {
       }
       return false;
     },
-    validEmail: function(email) {
+    validEmail: function (email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
@@ -100,7 +106,7 @@ export default {
       const form = this.form;
       const sendMail = firebase.functions().httpsCallable("sendMail");
       sendMail({ form })
-        .then(response => {
+        .then((response) => {
           this.sentMessage =
             "お問い合わせありがとうございます。送信完了しました。";
           setTimeout(() => {
@@ -110,12 +116,12 @@ export default {
           this.form.email.contents = "";
           this.form.message.contents = "";
         })
-        .catch(error => {
+        .catch((error) => {
           this.sentMessage =
             "送信できませんでした。もう一度ご入力をお願いします。";
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -48,8 +48,11 @@
                 <a
                   href="https://xd.adobe.com/view/87c9eb8f-37d9-4606-4ca0-73f467a67202-f1f8/"
                   target="_brank"
+                  rel="noopener noreferrer"
                 >
-                  <button class="modal-text__item-btn">XDのデザインを見る</button>
+                  <button class="modal-text__item-btn">
+                    XDのデザインを見る
+                  </button>
                 </a>
               </div>
             </div>
@@ -60,7 +63,12 @@
               <img src="../assets/img/portfolio_site_contact.png" alt />
             </div>
           </div>
-          <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
+          <button
+            class="modal-default-button close-button"
+            @click="$emit('close')"
+          >
+            閉じる
+          </button>
         </div>
       </div>
     </div>

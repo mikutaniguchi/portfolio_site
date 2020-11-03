@@ -40,8 +40,14 @@
                 </ul>
               </div>
               <div class="modal-text__item displayNone">
-                <a href="https://copysan.netlify.app" target="_brank">
-                  <button class="modal-text__item-btn">実際作ったものを見る</button>
+                <a
+                  href="https://copysan.netlify.app"
+                  target="_brank"
+                  rel="noopener noreferrer"
+                >
+                  <button class="modal-text__item-btn">
+                    実際作ったものを見る
+                  </button>
                 </a>
               </div>
             </div>
@@ -49,7 +55,12 @@
               <img src="../assets/img/SANGO_PC.png" alt />
             </div>
           </div>
-          <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
+          <button
+            class="modal-default-button close-button"
+            @click="$emit('close')"
+          >
+            閉じる
+          </button>
         </div>
       </div>
     </div>

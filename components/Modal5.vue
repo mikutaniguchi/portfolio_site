@@ -11,41 +11,34 @@
               <div class="modal-text__item">
                 <h1>制作</h1>
                 <p>
-                  PAS-POL様を模写
-                  <br class="br-display" />させていただきました。
+                  WPで1からテーマを自作
+                  <br class="br-display" />しました。
                 </p>
-                <p>時期：2020年1月</p>
-                <p>時間：20時間</p>
+                <p>時期：2020年4月</p>
+                <p>時間：30時間</p>
               </div>
               <div class="modal-text__item">
                 <h1>使ったもの</h1>
                 <ul class="text__item">
                   <li class="text__item-child">
+                    WordPress
+                    <p>▶︎一覧ページ</p>
+                    <p>▶︎シングルページ</p>
+                    <p>▶︎アーカイブページ</p>
+                    <p>▶︎記事検索</p>
+                    <p>▶︎お問い合わせ</p>
+                  </li>
+                  <li class="text__item-child">
                     HTML5/CSS3
-                    <p>▶︎CSSアニメーション</p>
                     <p>▶︎BEM記法</p>
                     <p>▶︎Sass(scss)</p>
                   </li>
-                  <li class="text__item-child">
-                    jQuery
-                    <p>▶︎ドロワーメニュー</p>
-                    <p>▶︎スクロールトップ</p>
-                    <p>▶︎スライダー</p>
-                  </li>
-                  <li class="text__item-child">
-                    レスポンシブ対応
-                    <p>▶︎メディアクエリ</p>
-                    <p>▶︎FlexBox</p>
-                  </li>
-                  <li class="text__item-child">
-                    その他
-                    <p>▶︎Fontawesome</p>
-                  </li>
+                  <li class="text__item-child"></li>
                 </ul>
               </div>
               <div class="modal-text__item">
                 <a
-                  href="https://copypas.netlify.app"
+                  href="https://wp.mikuweb.net"
                   target="_brank"
                   rel="noopener noreferrer"
                 >
@@ -56,15 +49,15 @@
               </div>
             </div>
             <div class="modal-img">
-              <img src="../assets/img/PAS-POL_PC.png" alt />
+              <img src="../assets/img/wp_detail.png" alt />
             </div>
-            <button
-              class="modal-default-button close-button"
-              @click="$emit('close')"
-            >
-              閉じる
-            </button>
           </div>
+          <button
+            class="modal-default-button close-button"
+            @click="$emit('close')"
+          >
+            閉じる
+          </button>
         </div>
       </div>
     </div>
@@ -105,14 +98,19 @@
   transform: scale(1.1);
 }
 .modal-container__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   @include tab {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
 }
 .modal-img {
-  @include Modalimg(220px);
+  @include Modalimg(290px);
+  & img {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  }
 }
 .modal-text {
   @include modalText;

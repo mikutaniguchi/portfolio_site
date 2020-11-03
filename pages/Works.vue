@@ -18,6 +18,7 @@
     <Modal2 v-if="isVisible2" @close="isVisible2 = false" />
     <Modal3 v-if="isVisible3" @close="isVisible3 = false" />
     <Modal4 v-if="isVisible4" @close="isVisible4 = false" />
+    <Modal5 v-if="isVisible5" @close="isVisible5 = false" />
   </div>
 </template>
 
@@ -26,13 +27,15 @@ import Modal1 from "~/components/Modal1.vue";
 import Modal2 from "~/components/Modal2.vue";
 import Modal3 from "~/components/Modal3.vue";
 import Modal4 from "~/components/Modal4.vue";
+import Modal5 from "~/components/Modal5.vue";
 
 export default {
   components: {
     Modal1,
     Modal2,
     Modal3,
-    Modal4
+    Modal4,
+    Modal5,
   },
   methods: {
     showModal(e) {
@@ -45,8 +48,10 @@ export default {
         this.isVisible3 = true;
       } else if (e.target.classList.contains("model4")) {
         this.isVisible4 = true;
+      } else if (e.target.classList.contains("model5")) {
+        this.isVisible5 = true;
       }
-    }
+    },
   },
   data() {
     return {
@@ -54,40 +59,55 @@ export default {
       isVisible2: false,
       isVisible3: false,
       isVisible4: false,
+      isVisible5: false,
       worksItems: [
+        {
+          img: require("../assets/img/wp_site.png"),
+          title: "WPテーマ自作",
+          text: "WordPress",
+          class: "model5",
+        },
         {
           img: require("../assets/img/portfolio_site.png"),
           title: "このサイト",
           text: "Nuxt.js/Firebase",
-          class: "model1"
+          class: "model1",
         },
         {
           img: require("../assets/img/PAS-POL.png"),
           title: "コーディング模写1",
           text: "HTML/CSS(scss)/jQuery",
-          class: "model2"
+          class: "model2",
         },
         {
           img: require("../assets/img/SANGO.png"),
           title: "コーディング模写2",
           text: "HTML/CSS/Bootstrap",
-          class: "model3"
+          class: "model3",
         },
         {
           img: require("../assets/img/PHPService.png"),
           title: "写真共有サービス",
           text: "PHP/Laravel",
-          class: "model4"
-        }
-      ]
+          class: "model4",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .works-title {
   @include main-title;
+}
+.works-main::after {
+  display: block;
+  content: "";
+  max-width: 90%;
+  @include tab {
+    width: 450px;
+  }
 }
 .works-main {
   display: flex;
@@ -103,11 +123,12 @@ export default {
     max-width: 90%;
     @include tab {
       width: 450px;
-      height: 100%;
+      height: 300px;
+      object-fit: cover;
+      overflow: hidden;
     }
     & img {
       width: 100%;
-      box-shadow: 1px 1px 2px 1px #d3d3d3;
     }
     &__title {
       font-weight: 700;

@@ -50,7 +50,12 @@
               <img src="../assets/img/Tripper.png" alt />
             </div>
           </div>
-          <button class="modal-default-button close-button" @click="$emit('close')">閉じる</button>
+          <button
+            class="modal-default-button close-button"
+            @click="$emit('close')"
+          >
+            閉じる
+          </button>
         </div>
       </div>
     </div>

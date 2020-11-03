@@ -25,7 +25,10 @@ export default {
           name: "Skills",
           url: "/skills",
         },
-
+        {
+          name: "Works",
+          url: "/works",
+        },
         {
           name: "About",
           url: "/about",
@@ -37,10 +40,6 @@ export default {
         {
           name: "Contact",
           url: "/contact",
-        },
-        {
-          name: "Works",
-          url: "/works",
         },
       ],
     };
