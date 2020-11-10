@@ -23,29 +23,29 @@ export default {
           img: require("../assets/img/about_bakery.png"),
           title: "パン作り",
           text:
-            "去年からパン作りにハマり、時々家族や友人に作っています。昔から細かい作業が好きで、手芸やアクセサリー作りに夢中になっている時期もありました。細かい工程が好きなのでメロンパンはよく作ります。"
+            "去年からパン作りにハマり、時々家族や友人に作っています。昔から細かい作業が好きで、手芸やアクセサリー作りに夢中になっている時期もありました。細かい工程が好きなのでメロンパンはよく作ります。",
         },
         {
           img: require("../assets/img/domesticTrip.png"),
           title: "国内旅行",
           text:
-            "自然のアクティビティや綺麗な景色、美味しい食べ物巡りが好きです。宮古島ではシュノーケリング、野沢温泉ではスノーボードを楽しみました。最近では伊豆方面に行って海鮮丼を食べたり海の見えるカフェでまったりしたりします。"
+            "自然のアクティビティや綺麗な景色、美味しい食べ物巡りが好きです。宮古島ではシュノーケリング、野沢温泉ではスノーボードを楽しみました。最近では伊豆方面に行って海鮮丼を食べたり海の見えるカフェでまったりしたりします。",
         },
         {
           img: require("../assets/img/abroad.png"),
           title: "海外",
           text:
-            "ワーキングホリデービザを使ってNZで9ヶ月間過ごしました。壮大な自然の中、様々な国の友人を作って英語上達と海外生活を楽しみました。ただ、食べ物は日本が一番と気づき、今後の拠点は日本だと確信しました。"
-        }
+            "ワーキングホリデービザを使ってNZで9ヶ月間過ごしました。壮大な自然の中、様々な国の友人を作って英語上達と海外生活を楽しみました。ただ、食べ物は日本が一番と気づき、今後の拠点は日本だと確信しました。",
+        },
       ],
       swiperOption: {
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      }
+          prevEl: ".swiper-button-prev",
+        },
+      },
     };
-  }
+  },
 };
 </script>
 
@@ -85,14 +85,15 @@ export default {
   outline: none;
   width: 50px;
   height: 50px;
-  border-radius: 50px;
   margin-bottom: 50px;
-  background-size: 30px 30px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
+
+  // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
   @include tab {
     width: 80px;
     height: 80px;
-    box-shadow: 1px 3px 2px 0px rgba(0, 0, 0, 0.2);
+    background-size: 30px 30px;
+    border-radius: 50px;
+    // box-shadow: 1px 3px 2px 0px rgba(0, 0, 0, 0.2);
     &:hover {
       opacity: 0.7;
     }
