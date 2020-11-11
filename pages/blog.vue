@@ -58,7 +58,7 @@ export default {
   }
   &__content {
     margin-top: 2em;
-    font-size: 14px;
+    font-size: 15px;
     @include tab {
       font-size: 16px;
     }

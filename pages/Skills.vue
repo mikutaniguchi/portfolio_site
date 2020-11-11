@@ -10,27 +10,35 @@
             v-for="(front_skillItem, index) in front_skillItems"
             :key="index"
           >
-            <p class="skills-main__frontend__skillItems-name">{{ front_skillItem.name }}</p>
+            <p class="skills-main__frontend__skillItems-name">
+              {{ front_skillItem.name }}
+            </p>
             <div
               class="skills-main__frontend__skillItems-level"
               :class="front_skillItem.length"
-            >{{ front_skillItem.level }}</div>
+            >
+              {{ front_skillItem.level }}
+            </div>
           </div>
         </div>
       </div>
       <div class="skills-main__backend">
-        <p class="skills-main__title">バックエンド/ツール</p>
+        <p class="skills-main__title">ツール/その他</p>
         <div class="skills-main__backend__skill">
           <div
             class="skills-main__frontend__skillItems"
             v-for="(back_skillItem, index) in back_skillItems"
             :key="index"
           >
-            <p class="skills-main__frontend__skillItems-name">{{ back_skillItem.name }}</p>
+            <p class="skills-main__frontend__skillItems-name">
+              {{ back_skillItem.name }}
+            </p>
             <div
               class="skills-main__frontend__skillItems-level"
               :class="back_skillItem.length"
-            >{{ back_skillItem.level }}</div>
+            >
+              {{ back_skillItem.level }}
+            </div>
           </div>
         </div>
       </div>
@@ -45,78 +53,68 @@ export default {
         {
           name: "HTML5",
           level: "5/5",
-          length: "length-5"
+          length: "length-5",
         },
         {
           name: "CSS3",
           level: "5/5",
-          length: "length-5"
+          length: "length-5",
         },
         {
           name: "Sass(scss)",
           level: "4/5",
-          length: "length-4"
+          length: "length-4",
         },
         {
           name: "WordPress",
           level: "4/5",
-          length: "length-4"
+          length: "length-4",
         },
         {
           name: "JavaScript/jQuery",
           level: "3/5",
-          length: "length-3"
+          length: "length-3",
         },
         {
           name: "JavaScript/Vue.js",
           level: "3/5",
-          length: "length-3"
+          length: "length-3",
         },
         {
           name: "Adobe XD",
           level: "2/5",
-          length: "length-2"
+          length: "length-2",
         },
         {
           name: "Adobe Illustrator",
           level: "2/5",
-          length: "length-2"
-        }
+          length: "length-2",
+        },
       ],
       back_skillItems: [
         {
           name: "VScode",
           level: "5/5",
-          length: "length-5"
+          length: "length-5",
         },
         {
           name: "MacOS",
           level: "5/5",
-          length: "length-5"
+          length: "length-5",
         },
         {
           name: "Git/GitHub",
           level: "3/5",
-          length: "length-3"
+          length: "length-3",
         },
         {
-          name: "PHP",
+          name: "PHP/Laravel",
           level: "2/5",
-          length: "length-2"
+          length: "length-2",
         },
-        {
-          name: "Laravel5.5",
-          level: "2/5",
-          length: "length-2"
-        },
-        {
-          name: "SQL",
-          level: "2/5",
-          length: "length-2"
-        }
-      ]
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -154,7 +152,7 @@ export default {
 }
 
 .skills-main__backend__skill {
-  @include skills(300px);
+  @include skills(200px);
 }
 
 .length-2 {
