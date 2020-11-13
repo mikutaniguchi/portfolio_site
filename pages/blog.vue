@@ -2,10 +2,10 @@
   <div>
     <h2 class="blog-title">Blog</h2>
     <div class="blog-article">
-      <article v-for="post in posts" :key="post.id">
-        <p class="blog-article__title">{{ post.title.rendered }}</p>
-        <p class="blog-article__date">{{ post.date | moment }}</p>
-        <div class="blog-article__content" v-html="post.content.rendered"></div>
+      <article v-for="content in contents" :key="content.id">
+        <p class="blog-article__title">{{ content.title }}</p>
+        <p class="blog-article__date">{{ content.date | moment }}</p>
+        <div class="blog-article__content" v-html="content.text"></div>
       </article>
     </div>
   </div>
@@ -20,10 +20,16 @@ export default {
       posts: [],
     };
   },
-  mounted() {
-    axios
-      .get("https://wp.mikuweb.net/wp-json/wp/v2/blog/")
-      .then((response) => (this.posts = response.data));
+  async asyncData() {
+    const { data } = await axios.get(
+      // your-service-id部分は自分のサービスidに置き換えてください
+      "https://mikuweb.microcms.io/api/v1/blog",
+      {
+        // your-api-key部分は自分のapi-keyに置き換えてください
+        headers: { "X-API-KEY": "f887e442-fab1-49b3-af41-caaa81af2505" },
+      }
+    );
+    return data;
   },
 };
 </script>
@@ -136,56 +142,5 @@ export default {
       }
     }
   }
-}
-
-$main-color: #fff;
-$small-color: #d48a8a;
-$dark-color: #e94046;
-$background: #f4f4f4;
-.article {
-  width: 100%;
-}
-.article-background {
-  background: #fff;
-}
-
-.post-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-.article-content {
-  margin-bottom: 50px;
-}
-.article-content h1 {
-  margin: 20px 0;
-  font-size: 25px;
-  color: $dark-color;
-}
-.article-content h2 {
-  margin: 20px 0;
-  font-size: 24px;
-  font-weight: 700;
-  border-left: solid 5px $main-color;
-}
-.article-content h3 {
-  margin: 20px 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-.article-content p,
-.article-content h1,
-.article-content h2,
-.article-content h3 {
-  line-height: 1.8;
-  letter-spacing: 1px;
-}
-.article-content table {
-  border: dashed 2px #9c9a9a;
-  width: 100%;
-}
-.article-content td {
-  padding: 5px;
-  padding-left: 10px;
 }
 </style>
