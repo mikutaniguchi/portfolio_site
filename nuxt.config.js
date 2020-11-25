@@ -38,7 +38,7 @@ export default {
     { src: "~/plugins/vue-scrollto", ssr: false },
     { src: "~/plugins/firebase.js" },
     { src: "@/plugins/vee-validate" },
-    { src: "~/plugins/moment-filter", ssr: false }
+    { src: "~/plugins/moment-filter" }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -80,7 +80,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
   // router: {
   //   base: "/<repository-name>/"
