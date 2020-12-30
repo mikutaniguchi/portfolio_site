@@ -13,8 +13,8 @@ import BackToTop from "@/components/BackToTop.vue";
 export default {
   components: {
     Header,
-    BackToTop,
-  },
+    BackToTop
+  }
 };
 </script>
 <style lang="scss">
@@ -37,7 +37,6 @@ html {
 }
 
 main {
-  height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
 }
