@@ -43,7 +43,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="modal-text__item">
+              <!-- <div class="modal-text__item">
                 <a
                   href="https://copypas.netlify.app"
                   target="_brank"
@@ -53,7 +53,7 @@
                     実際作ったものを見る
                   </button>
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="modal-img">
               <img src="../assets/img/PAS-POL_PC.png" alt />

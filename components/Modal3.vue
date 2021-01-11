@@ -39,7 +39,7 @@
                   <li class="text__item-child"></li>
                 </ul>
               </div>
-              <div class="modal-text__item displayNone">
+              <!-- <div class="modal-text__item displayNone">
                 <a
                   href="https://copysan.netlify.app"
                   target="_brank"
@@ -49,7 +49,7 @@
                     実際作ったものを見る
                   </button>
                 </a>
-              </div>
+              </div> -->
             </div>
             <div class="modal-img">
               <img src="../assets/img/SANGO_PC.png" alt />

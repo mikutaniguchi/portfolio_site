@@ -1,3 +1,5 @@
+// require('dotenv').config();
+// const {API_KEY , API_URL} = process.env
 export default {
   mode: "universal",
   /*
@@ -81,8 +83,12 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) { }
-  }
-  // router: {
-  //   base: "/<repository-name>/"
-  // }
+  },
+  // publicRuntimeConfig :{
+  //   apiUrl: API_URL,
+  //   apiKey: API_KEY
+  // },
+  // publicRuntimeConfig: {
+  //   apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
+  // },
 };
